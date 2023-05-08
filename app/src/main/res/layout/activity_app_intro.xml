@@ -20,7 +20,7 @@
         android:id="@+id/textView"
         android:layout_width="353dp"
         android:layout_height="82dp"
-        android:text="ENERGY & PERSISTENCE"
+        android:text="ENERGY PERSISTENCE"
         android:textColor="#F5F6F6"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="76dp"
