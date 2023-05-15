@@ -11,4 +11,6 @@
     <color name="yellow">#FFFF00</color>
     <color name="babyblue">#0CAFFF</color>
     <color name="cyan">#00FFFF</color>
+    <color name="dark_red">#CA0000</color>
+    <color name="red">#F02E00</color>
 </resources>

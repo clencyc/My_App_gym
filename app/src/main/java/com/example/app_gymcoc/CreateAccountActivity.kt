@@ -1,14 +1,17 @@
 package com.example.app_gymcoc
 
+
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+
 
 class CreateAccountActivity : AppCompatActivity() {
 
@@ -16,94 +19,72 @@ class CreateAccountActivity : AppCompatActivity() {
     lateinit var Password_EDT: EditText
     lateinit var Confirmpass_EDT: EditText
     lateinit var BTN_Signin: Button
+    lateinit var Text_Signin: TextView
 
-
-    lateinit var auth:FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
-        auth = FirebaseAuth.getInstance()
 
-        Email_EDT = findViewById(R.id.emailEt)
-        Password_EDT = findViewById(R.id.passET)
-        Confirmpass_EDT = findViewById(R.id.confirmPassEt)
-        BTN_Signin = findViewById(R.id.btn_signup)
-
-        auth = FirebaseAuth.getInstance()
+        Email_EDT = findViewById(R.id.emailEdt)
+        Password_EDT = findViewById(R.id.passEdT)
+        BTN_Signin = findViewById(R.id.btn_signupbtn)
+        Confirmpass_EDT = findViewById(R.id.confirmPassEdt)
+        Text_Signin = findViewById(R.id.textView_signin)
 
 
         BTN_Signin.setOnClickListener {
-
             var email = Email_EDT.text.toString().trim()
-            var pass = Password_EDT.text.toString().trim()
+            var password = Password_EDT.text.toString().trim()
             var confirmpass = Confirmpass_EDT.text.toString().trim()
 
-            //validate
-            if (email.isNotEmpty() && pass.isNotEmpty() && confirmpass.isNotEmpty()) {
-                 if (pass == confirmpass) {
+            var time_id = System.currentTimeMillis().toString().trim()
+            //progress bar
+            var progress = ProgressDialog(this)
+            progress.setTitle("Saving Data")
+            progress.setMessage("Please wait")
 
-                   auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                       val intent = Intent(this, App_intro::class.java)
-                     startActivity(intent)
-                } else {
-                  Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+            //validation  of data
+            if (email.isEmpty() || password.isEmpty() || confirmpass.isEmpty()){
 
-                }
-                }
-                } else {
-                  Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
-                }
-                } else {
-                  Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Cannot submit an empty field", Toast.LENGTH_SHORT).show()
 
-                 }
-//}
+            } else{
+                var my_child = FirebaseDatabase.getInstance().reference.child("Names/" + time_id)
+                var user_data = Users(email, password, confirmpass, time_id)
+
+
+                //show progress bar
+                progress.show()
+
+                my_child.setValue(user_data).addOnCompleteListener {
+                    if (it.isSuccessful){
+
+                        //Toast.makeText(this, "Data Uploaded successfully", Toast.LENGTH_SHORT).show()
+
+                        var gotomain = Intent(this, MainActivity::class.java)
+                        startActivity(gotomain)
+                    } else{
+                        Toast.makeText(this, "Failed to upload data", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+
+            }
+
+
+
         }
+
+
+        Text_Signin.setOnClickListener{
+
+            var gotosignin = Intent(this, SignInActivity::class.java)
+            startActivity(gotosignin)
+
+        }
+
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//binding = ActivitySignUpBinding.inflate(layoutInflater)
-//setContentView(binding.root)
-
-//firebaseAuth = FirebaseAuth.getInstance()
-
-//binding.button.setOnClickListener {
-  //  val email = binding.emailEt.text.toString()
-    //val pass = binding.passET.text.toString()
-    //val confirmPass = binding.confirmPassEt.text.toString()
-
-    //if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
-       // if (pass == confirmPass) {
-
-         //   firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-           //     if (it.isSuccessful) {
-             //       val intent = Intent(this, App_intro::class.java)
-               //     startActivity(intent)
-                //} else {
-                  //  Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-
-                //}
-            //}
-        //} else {
-          //  Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
-        //}
-    //} else {
-      //  Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
-
-   // }
-//}

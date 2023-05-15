@@ -14,30 +14,28 @@
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.App_gymcoc" />
-        <activity
-            android:name=".Main_TabbedActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main_tabbed"
-            android:theme="@style/Theme.App_gymcoc.NoActionBar" />
+            android:theme="@style/Theme.App_gymcoc"/>
+
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.App_gymcoc">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity
             android:name=".SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".splashscreenActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.App_gymcoc"/>
+
         <activity
             android:name=".CreateAccountActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"
+            android:theme="@style/Theme.App_gymcoc"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".App_intro"
             android:exported="false" />
