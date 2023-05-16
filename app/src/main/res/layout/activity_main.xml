@@ -7,25 +7,6 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fl_layout"
-        />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/babyblue"
-        app:itemIconTint="#fff"
-        app:itemTextColor="#fff"
-        app:menu="@menu/nav_menu"
-        android:id="@+id/bottom_nav"/>
-
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,28 +14,7 @@
         android:orientation="vertical"
         android:layout_margin="10dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:src="@drawable/wkt01"
-                android:padding="10dp"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/wkt01"
-                android:padding="10dp"/>
-
-
-
-        </RelativeLayout>
 
 
         <TextView
@@ -63,7 +23,7 @@
             android:textStyle="bold"
             android:textSize="22sp"
             android:padding="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"/>
 
 
@@ -71,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="190dp">
 
-            <RelativeLayout
+            <ImageView
                 android:id="@+id/card_one"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -80,6 +40,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/cardiio">
+            </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,9 +62,6 @@
                     android:textStyle="bold" />
 
 
-            </RelativeLayout>
-
-
 
         </RelativeLayout>
 
@@ -114,22 +72,13 @@
             app:cardElevation="2dp"
             android:layout_margin="20dp">
 
-            <RelativeLayout
+            <ImageView
                 android:id="@+id/card_two"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/fullbody">
+            </ImageView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:padding="15dp"
-                    android:text="Expand all"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,12 +90,6 @@
                     android:textSize="26sp" />
 
 
-            </RelativeLayout>
-
-
-
-
-
 
 
         </androidx.cardview.widget.CardView>
@@ -156,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="190dp">
 
-            <RelativeLayout
+            <ImageView
                 android:id="@+id/card_three"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -165,6 +108,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/stretches">
+            </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -187,7 +131,7 @@
                     android:textStyle="bold" />
 
 
-            </RelativeLayout>
+
 
 
 
@@ -201,22 +145,14 @@
             app:cardElevation="2dp"
             android:layout_margin="20dp">
 
-            <RelativeLayout
+            <ImageView
                 android:id="@+id/card_four"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/strenghth">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:padding="15dp"
-                    android:text="Expand all"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+            </ImageView>
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -226,11 +162,6 @@
                     android:text="Strength exercises"
                     android:textColor="@color/white"
                     android:textSize="26sp" />
-
-
-            </RelativeLayout>
-
-
 
 
 

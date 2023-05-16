@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,31 +15,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
+            android:name=".strengthexercises"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".stretchesactivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".fullbodyactivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".CardioActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light"  />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.App_gymcoc"/>
-
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.App_gymcoc">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.AppCompat.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignInActivity"
             android:exported="false"
-            android:theme="@style/Theme.App_gymcoc"/>
-
+            android:theme="@style/Theme.AppCompat.Light"  />
         <activity
             android:name=".CreateAccountActivity"
             android:exported="false"
-            android:theme="@style/Theme.App_gymcoc"/>
-
+            android:theme="@style/Theme.AppCompat.Light"  />
         <activity
             android:name=".App_intro"
             android:exported="false" />
