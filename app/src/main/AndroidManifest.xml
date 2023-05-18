@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,13 +15,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".strengthexercises"
+            android:name=".CLNDactivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TracmeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".time_activity"
+            android:exported="false" />
+        <activity
+            android:name=".mentalWellnessActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light"/>
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".MentalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".strengthexercisesActivity"
+            android:exported="false"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
         <activity
             android:name=".stretchesactivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".fullbodyactivity"
             android:exported="false"
@@ -29,7 +47,7 @@
         <activity
             android:name=".CardioActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light"  />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
@@ -38,7 +56,7 @@
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light" >
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,11 +66,11 @@
         <activity
             android:name=".SignInActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light"  />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".CreateAccountActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light"  />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".App_intro"
             android:exported="false" />

@@ -48,4 +48,15 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <string name="mentalhealth">
+        Mental health include our emotional, psycological, and social well-bing. It affects how we think, feel, and act. It also helps determine
+how we handle stress, relate to others, and make healthy choices. Mental health is important at every stage of life, from childhood and adolenscence though adulthood
+
+    </string>
+
+    <string name="health">
+        Yes it\'s important to remember that a person\'s mental health can change over time, depending on many factors. When the
+        demands placed on a person exceed their mental health could be impacted. For example, is someone is working long hours, caring for a relative, or experiencing economic hardship, they may experience poor mental health.
+    </string>
 </resources>
